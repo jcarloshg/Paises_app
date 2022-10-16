@@ -33,12 +33,9 @@ export class PorPaisComponent {
   }
 
   suggestionsNamesFromCountries(name: string) {
-
     this.termino = name.trim();
     const nombrePais: string = name.trim();
     this.existErr = false;
   }
-
-
 
 }

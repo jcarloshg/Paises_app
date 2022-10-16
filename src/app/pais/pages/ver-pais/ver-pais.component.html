@@ -1,1 +1,59 @@
-<p>ver-pais works!</p>
+<ng-container *ngIf="!pais; else existPais">
+  <div class="alert alert-info">Espere por favor...</div>
+</ng-container>
+
+<ng-template #existPais>
+  <div class="row">
+    <div class="col-12">
+      <h1>
+        Pais: <small>{{ pais.name.common }}</small>
+      </h1>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <h3>Bandera</h3>
+        <p>{{ pais.flag }}</p>
+      </div>
+      <div class="col">
+        <h3>Info pais</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Poblacion</strong> {{ pais.population | number }}
+          </li>
+          <li class="list-group-item">
+            <strong>Codigo num.</strong> {{ pais.postalCode?.format }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- <h3>Traducciones</h3>
+  <div class="row">
+    <div class="col">
+      <span class="badge bg-primary mr-1">{{
+        pais.translations["ara"].common
+      }}</span>
+      <span class="badge bg-primary mr-1">{{
+        pais.translations["bre"].common
+      }}</span>
+      <span class="badge bg-primary mr-1">{{
+        pais.translations["ses"].common
+      }}</span>
+      <span class="badge bg-primary mr-1">{{
+        pais.translations["cym"].common
+      }}</span>
+      <span class="badge bg-primary mr-1">{{
+        pais.translations["deu"].common
+      }}</span>
+      <span class="badge bg-primary mr-1">{{
+        pais.translations["est"].common
+      }}</span>
+    </div>
+  </div> -->
+
+  <pre class="mt-5">
+    {{ pais | json }}
+  </pre>
+</ng-template>

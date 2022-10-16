@@ -1,39 +1,39 @@
 export interface Pais {
-    name:         Name;
-    tld:          string[];
-    cca2:         string;
-    ccn3:         string;
-    cca3:         string;
-    independent:  boolean;
-    status:       string;
-    unMember:     boolean;
-    currencies:   Currencies;
-    idd:          Idd;
-    capital:      string[];
     altSpellings: string[];
-    region:       string;
-    subregion:    string;
-    languages:    Languages;
+    area: number;
+    borders?: string[];
+    capital: string[];
+    capitalInfo: CapitalInfo;
+    car: Car;
+    cca2: string;
+    cca3: string;
+    ccn3: string;
+    cioc?: string;
+    coatOfArms: CoatOfArms;
+    continents: string[];
+    currencies: Currencies;
+    demonyms: Demonyms;
+    fifa?: string;
+    flag: string;
+    flags: CoatOfArms;
+    gini?: Gini;
+    idd: Idd;
+    independent: boolean;
+    landlocked: boolean;
+    languages: Languages;
+    latlng: number[];
+    maps: Maps;
+    name: Name;
+    population: number;
+    postalCode?: PostalCode;
+    region: string;
+    startOfWeek: string;
+    status: string;
+    subregion: string;
+    timezones: string[];
+    tld: string[];
     translations: { [key: string]: Translation };
-    latlng:       number[];
-    landlocked:   boolean;
-    area:         number;
-    demonyms:     Demonyms;
-    flag:         string;
-    maps:         Maps;
-    population:   number;
-    fifa?:        string;
-    car:          Car;
-    timezones:    string[];
-    continents:   string[];
-    flags:        CoatOfArms;
-    coatOfArms:   CoatOfArms;
-    startOfWeek:  string;
-    capitalInfo:  CapitalInfo;
-    postalCode?:  PostalCode;
-    cioc?:        string;
-    borders?:     string[];
-    gini?:        Gini;
+    unMember: boolean;
 }
 
 export interface CapitalInfo {
@@ -42,7 +42,7 @@ export interface CapitalInfo {
 
 export interface Car {
     signs: string[];
-    side:  string;
+    side: string;
 }
 
 export interface CoatOfArms {
@@ -57,12 +57,12 @@ export interface Currencies {
 }
 
 export interface Aud {
-    name:   string;
+    name: string;
     symbol: string;
 }
 
 export interface Demonyms {
-    eng:  Eng;
+    eng: Eng;
     fra?: Eng;
 }
 
@@ -76,7 +76,7 @@ export interface Gini {
 }
 
 export interface Idd {
-    root:     string;
+    root: string;
     suffixes: string[];
 }
 
@@ -86,13 +86,13 @@ export interface Languages {
 }
 
 export interface Maps {
-    googleMaps:     string;
+    googleMaps: string;
     openStreetMaps: string;
 }
 
 export interface Name {
-    common:     string;
-    official:   string;
+    common: string;
+    official: string;
     nativeName: NativeName;
 }
 
@@ -103,10 +103,10 @@ export interface NativeName {
 
 export interface Translation {
     official: string;
-    common:   string;
+    common: string;
 }
 
 export interface PostalCode {
     format: string;
-    regex:  string;
+    regex: string;
 }

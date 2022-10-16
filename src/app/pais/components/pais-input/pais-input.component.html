@@ -5,7 +5,7 @@
     id=""
     name="termino"
     class="form-control"
-    placeholder="Buscar pais"
+    [placeholder]="customPlaceHolder"
     [(ngModel)]="termino"
     (input)="presKey($event)"
   />
